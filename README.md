@@ -1,4 +1,4 @@
-# 📂 File Sorter & ❄️ Koch Snowflake Drawer
+# File Sorter & Koch Snowflake Drawer
 
 This repository contains **two Python programs**:
 
@@ -7,7 +7,7 @@ This repository contains **two Python programs**:
 
 ---
 
-## 🛠 Installation
+## Installation
 
 Both programs require **Python 3.7+**.  
 Check your Python version:
@@ -18,23 +18,23 @@ python --version
 
 If you have `python3` instead of `python`, use that in all commands below.
 
-### 📦 Install Tkinter
+### Install Tkinter
 
 Both programs use only Python’s **standard library** (`os`, `shutil`, `pathlib`, `sys`, `turtle`).  
 The only external dependency is **Tkinter**, which may need installation depending on your OS.
 
-#### 🪟 Windows
+#### Windows
 Tkinter is included with the standard Python installer from [python.org](https://www.python.org/downloads/).  
 If you see an error like `ModuleNotFoundError: No module named 'tkinter'`, reinstall Python using the **Windows installer** and ensure you check **"tcl/tk and IDLE"** during installation.
 
-#### 🐧 Ubuntu / Debian
+#### Ubuntu / Debian
 Run:
 ```bash
 sudo apt update
 sudo apt install python3-tk
 ```
 
-#### 🍏 macOS
+#### macOS
 Tkinter is included with the official Python installer from [python.org](https://www.python.org/downloads/).  
 If you installed Python via Homebrew and Tkinter is missing:
 ```bash
@@ -43,9 +43,9 @@ brew install python-tk
 
 ---
 
-## 📂 1. File Sorter
+## 1. File Sorter
 
-### ▶️ Usage
+### Usage
 
 Run the script with:
 ```bash
@@ -55,7 +55,7 @@ python hw1.py <input_dir> [output_dir]
 - `<input_dir>`: Path to the folder you want to organize (**required**).  
 - `[output_dir]`: Path to the destination folder (**optional**, defaults to `dist`).  
 
-### 💡 Example
+### Example
 
 ```bash
 python hw1.py ~/Downloads
@@ -76,11 +76,11 @@ This saves sorted files into `~/OrganizedFiles`.
 
 ---
 
-## ❄️ 2. Koch Snowflake Drawer
+## 2. Koch Snowflake Drawer
 
 This program draws a **Koch snowflake fractal** using `turtle` graphics.
 
-### ▶️ Usage
+### Usage
 
 Run:
 ```bash
@@ -96,13 +96,13 @@ Enter recursion depth (e.g. 0-6):
 - **Depth 1** → triangle with bumps  
 - **Depth 4–6** → detailed fractal (drawing will take longer)  
 
-### 🖼 Example
+### Example
 
 At **depth 3**, the snowflake looks like a symmetric fractal ❄️.
 
 ---
 
-## ⚠️ Notes
+## Notes
 
 - The two programs are currently in the **same file (`hw1.py`)**, and both define a `main()` function.  
   - To run the **file sorter**, pass arguments → `python hw1.py <input_dir>`.  
@@ -113,4 +113,4 @@ At **depth 3**, the snowflake looks like a symmetric fractal ❄️.
 
 ---
 
-✅ Now you can organize your files **and** draw fractals with one script!
+Now you can organize your files **and** draw fractals with one script!
