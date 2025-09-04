@@ -25,12 +25,17 @@ def copy_file(file: Path, dist: Path) -> None:
         print(f"Error copying file {file}: {e}")
 # Recursively read a directory and copy files to the destination directory
 def read_dir_recursively(directory: Path, dist: Path) -> None:
-    for item in os.listdir(directory):
-        item_path = os.path.join(directory, item)
-        if os.path.isdir(item_path):
-            read_dir_recursively(item_path, dist)
-        else:
-            copy_file(item_path, dist)
+    directory = Path(directory)
+    dist = Path(dist)
+
+    try:
+        for item in directory.iterdir():
+            if item.is_dir():
+                read_dir_recursively(item, dist)
+            elif item.is_file():
+                copy_file(item, dist)
+    except Exception as e:
+        print(f"Error reading directory {directory}: {e}")
 
 def main():
     try:
