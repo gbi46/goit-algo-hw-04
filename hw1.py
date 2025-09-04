@@ -2,9 +2,9 @@ from pathlib import Path
 
 import os, shutil, sys
 
-def ensure_dir(directory):
-    os.makedirs(directory, exist_ok=True)
-    return True
+# Create a directory if it doesn't exist
+def ensure_dir(directory: Path) -> None:
+    directory.mkdir(parents=True, exist_ok=True)
 
 def copy_file(file, dist):
     file = Path(file)
