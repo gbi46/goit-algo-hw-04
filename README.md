@@ -84,7 +84,7 @@ This program draws a **Koch snowflake fractal** using `turtle` graphics.
 
 Run:
 ```bash
-python hw1.py
+python hw2.py
 ```
 
 The program will ask for recursion depth:
