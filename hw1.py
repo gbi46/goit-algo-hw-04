@@ -6,18 +6,23 @@ import os, shutil, sys
 def ensure_dir(directory: Path) -> None:
     directory.mkdir(parents=True, exist_ok=True)
 
-def copy_file(file, dist):
+# Copy a file to the destination directory according to its extension
+# or to a "no_ext" folder if it has no extension
+def copy_file(file: Path, dist: Path) -> None:
     file = Path(file)
     dist = Path(dist)
 
-    ensure_dir(dist)
-    subdir = file.suffix.lstrip(".")
+    subdir = file.suffix.lstrip(".") or "no_ext"
     sub_dist = dist / subdir
 
     ensure_dir(sub_dist)
     target = sub_dist / file.name
-    if not target.exists():
-        shutil.copy2(file, target)
+
+    try:
+        if not target.exists():
+            shutil.copy2(file, target)
+    except Exception as e:
+        print(f"Error copying file {file}: {e}")
 
 def read_dir_recursively(directory, dist):
     for item in os.listdir(directory):
