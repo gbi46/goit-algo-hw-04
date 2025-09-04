@@ -23,8 +23,8 @@ def copy_file(file: Path, dist: Path) -> None:
             shutil.copy2(file, target)
     except Exception as e:
         print(f"Error copying file {file}: {e}")
-
-def read_dir_recursively(directory, dist):
+# Recursively read a directory and copy files to the destination directory
+def read_dir_recursively(directory: Path, dist: Path) -> None:
     for item in os.listdir(directory):
         item_path = os.path.join(directory, item)
         if os.path.isdir(item_path):
