@@ -108,6 +108,7 @@ for n in sizes:
 
 df = pd.DataFrame(results).sort_values(["dataset", "n", "algorithm"])
 df.to_csv("sorting_benchmark_results.csv", index=False)
+print("Done. Wrote sorting_benchmark_results.csv")
 
 # ---------- Plot (for random dataset) ----------
 
@@ -122,3 +123,4 @@ plt.title("Sorting time vs n (dataset: random)")
 plt.legend()
 plt.tight_layout()
 plt.savefig("sorting_benchmark_random.png")
+print("Done. Wrote sorting_benchmark_random.png")
